@@ -7,7 +7,6 @@ python:
   - '3.5'
   - '3.6'
   - '3.7-dev'
-  - pypy3.3-5.5-alpha
 
 install:
   - pip install -U pip setuptools
@@ -21,4 +20,4 @@ script:
 
   - py.test -vv test --cov=inheritly --cov=test --cov-fail-under=100
 
-  - tox -vre py$(perl -pe "s/(^py|\.|-.+$)//g" <<< $TRAVIS_PYTHON_VERSION)
+  - tox -vre py$(perl -pe "s/(|\.|-.+$)//g" <<< $TRAVIS_PYTHON_VERSION)
