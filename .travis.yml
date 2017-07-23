@@ -21,4 +21,4 @@ script:
 
   - py.test -vv test --cov=inheritly --cov=test --cov-fail-under=100
 
-  - tox -vre py$(perl -pe "s/(py3\.|\.|-.+$)//g" <<< $TRAVIS_PYTHON_VERSION)
+  - tox -vre py$(perl -pe "s/(^py|\.|-.+$)//g" <<< $TRAVIS_PYTHON_VERSION)
